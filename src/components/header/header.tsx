@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { socialLinks } from './header.data'
 import logoImage from '../../assets/logo_referencia_legal.png'
 import './header.css'
+import '../../common.css'
 
 const navItems = [
     { label: 'Inicio', to: '/' },
@@ -15,7 +16,7 @@ const navItems = [
 export const Header = () => {
     return (
         <header className="header">
-            <div className="header-content">
+            <div className="header-content max-width">
                 <NavLink className="header-logo-link" to="/">
                     <img
                         alt="Referencia Legal"
@@ -25,7 +26,8 @@ export const Header = () => {
                 </NavLink>
 
                 <div className="header-navigation">
-                    <div className="header-contact-row">                            <div className="header-social-links">
+                    <div className="header-contact-row">
+                      <div className="header-social-links">
                             <ul className="header-social-list">
                                 {socialLinks.map((socialLink) => (
                                     <li className="header-social-item" key={socialLink.label}>
