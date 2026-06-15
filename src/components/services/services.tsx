@@ -3,5 +3,5 @@ export function Services() {
     <div>
       <h1>Services</h1>
     </div>
-  );
+  )
 }
