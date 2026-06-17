@@ -1,11 +1,13 @@
+import type { FC } from 'react'
 import './team.css'
 import '../../common.css'
-import imagenPrueba from '../../assets/icon_referencia_legal.jpg'
+import melisaImg from '../../assets/team/melisa_arboleda.jpeg'
+import carolinaImg from '../../assets/team/carolina_restrepo.jpeg'
+import santiagoImg from '../../assets/team/santiago_cardona.jpeg'
+import cristianImg from '../../assets/team/cristian_torres.jpeg'
 
 
-
-
-export const Team = () => {
+export const Team: FC = () => {
   return (
     <>
       <section id='team' className='team'>
@@ -13,24 +15,24 @@ export const Team = () => {
           <h2 className='section-title'>NUESTRO EQUIPO DE EXPERTOS</h2>
           <div className='team-members'>
             <div className='team-member'>
-              <img src={imagenPrueba} alt="MELISA ARBOLEDA OSPINA" />
+              <img src={melisaImg} alt="MELISA ARBOLEDA OSPINA" />
               <h3>MELISA ARBOLEDA OSPINA</h3>
               <p>Directora Jurídica</p>
             </div>
             <div className='team-member'>
-              <img src={imagenPrueba} alt="CAROLINA RESTREPO" />
+              <img src={carolinaImg} alt="CAROLINA RESTREPO" />
               <h3>CAROLINA RESTREPO</h3>
               <p>Abogada Especialista</p>
             </div>
             <div className='team-member'>
-              <img src={imagenPrueba} alt="SANTIAGO CARDONA" />
+              <img src={santiagoImg} alt="SANTIAGO CARDONA" />
               <h3>SANTIAGO CARDONA</h3>
               <p>Auxiliar Jurídico</p>
             </div>
             <div className='team-member'>
-              <img src={imagenPrueba} alt="CRISTIAN CASTRO" />
-              <h3>CRISTIAN CASTRO</h3>
-              <p>Director Administrativo y comercial</p>
+              <img src={cristianImg} alt="CRISTIAN TORRES" />
+              <h3>CRISTIAN TORRES</h3>
+              <p>Director Administrativo y Comercial</p>
             </div>
           </div>
         </div>
