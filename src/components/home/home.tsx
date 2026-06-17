@@ -1,5 +1,7 @@
 import './home.css'
 import '../../common.css'
+import teamImage from '../../assets/home/001.webp'
+import iconImage from '../../assets/icon.webp'
 
 export function Home() {
   return (
@@ -12,13 +14,13 @@ export function Home() {
             <button className="main-button">Agendar consulta</button>
           </div>
           <div className="image-container">
-            <img src="./src/assets/home/001.webp" alt="" />
+            <img src={teamImage} alt="" />
           </div>
         </div>
         <hr />
         <div className="slogan max-width">
           <div className="slogan-icon">
-            <img src="./src/assets/icon.webp" />
+            <img src={iconImage} alt="" />
           </div>
           <p>Transformamos el Derecho de Familia en un proceso claro y cercano.</p>
         </div>
