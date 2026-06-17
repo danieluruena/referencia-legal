@@ -1,8 +1,8 @@
 .header {
     text-align: center;
-    background: #062331;
+    background: #081e2d;
     border-bottom: 8px solid;
-    border-image: linear-gradient(to right, transparent 0%, #b18b45 60%) 1;
+    border-image: linear-gradient(to right, transparent 0%, #ad864e 60%) 1;
 }
 
 .header-content {
@@ -136,7 +136,7 @@
 .navbar-link:hover,
 .navbar-link:focus-visible,
 .navbar-link-active {
-    color: #d1ad61;
+    color: #ad864e;
 }
 
 .navbar-link:hover::after,
