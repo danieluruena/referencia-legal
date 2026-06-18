@@ -1,10 +1,10 @@
 import type { FC } from 'react'
 import './team.css'
 import '../../common.css'
-import melisaImg from '../../assets/team/melisa_arboleda.jpeg'
-import carolinaImg from '../../assets/team/carolina_restrepo.jpeg'
-import santiagoImg from '../../assets/team/santiago_cardona.jpeg'
-import cristianImg from '../../assets/team/cristian_torres.jpeg'
+import melisaImg from '../../assets/team/Melisa.webp'
+import carolinaImg from '../../assets/team/Carolina.webp'
+import santiagoImg from '../../assets/team/Santiago.webp'
+import cristianImg from '../../assets/team/Cristian.webp'
 
 
 export const Team: FC = () => {
@@ -44,10 +44,12 @@ export const Team: FC = () => {
           <div className='principles-cards'>
             <div className='principle-card'>
               <h3>Comunicación y transparencia</h3>
-              <p>En Referencia Legal mantenemos una comunicación constante, asegurando que comprendas cada etapa de tu proceso.</p>
+              <p>En Referencia Legal, mantenemos una comunicación constante, asegurando que comprendas cada etapa de tu proceso.</p>
             </div>
             <div className='principle-card'>
+
               <h3>Compromiso</h3>
+              <br />
               <p>Nuestro compromiso es tu bienestar, siempre priorizando tus necesidades e intereses en cada acción.</p>
             </div>
             <div className='principle-card'>

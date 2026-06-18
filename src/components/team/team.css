@@ -1,7 +1,6 @@
 
 .team {
-  width: 100%;
-  padding: 80px 80px 20px 80px;
+  padding: 50px 0px 20px 0px;
   background-color: #ede8e1;
 }
 
@@ -16,6 +15,7 @@
   font-size: 60px;
   color: #ad864e;
   text-align: center;
+  font-weight: bold;
 }
 
 .team-members {
@@ -34,21 +34,54 @@
 .team-member img {
   width: 450px;
   height: 450px;
-  border-radius: 50%;
-  object-fit: cover;
 }
 
 
 h3 {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: light;
   text-align: center;
-  margin: 0;
 }
 
 p {
   font-size: 30px;
-  font-weight: 400;
+  font-weight: medium;
   text-align: center;
-  margin: 0;
+}
+
+.principles {
+  padding: 50px 0px 20px 0px;
+  background-color: #081e2d;
+}
+
+.principles-content {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.principles-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.principle-card {
+  background-color: #ede8e1;
+  border: 5px solid #ad864e;
+  border-radius: 60px;
+  padding: 40px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  min-height: 280px;
+}
+
+.principle-card h3 {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: start;
 }

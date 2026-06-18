@@ -2,7 +2,13 @@
     text-align: center;
     background: #081e2d;
     border-bottom: 8px solid;
-    border-image: linear-gradient(to right, transparent 0%, #ad864e 60%) 1;
+    border-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            #ad864e 60%,
+            #ad864e 100%
+        ) 1;
 }
 
 .header-content {
