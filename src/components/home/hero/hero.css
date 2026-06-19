@@ -1,0 +1,59 @@
+.hero {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.hero-description {
+  align-self: center;
+  display: grid;
+  gap: 40px;
+  font-size: 1.25rem;
+  z-index: 4;
+  padding-left: 40px;
+}
+
+.hero-description hr {
+  border: none;
+  height: 4px;
+  width: 70%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-primary) 20%,
+    var(--color-primary) 50%,
+    var(--color-primary) 80%,
+    transparent 100%
+  );
+}
+
+.hero-image-container img {
+  display: block;
+  width: 115%;
+  transform: translateX(-15%);
+  height: auto;
+  z-index: 3;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
+
+.hero-button {
+  margin-top: 10%;
+  margin-right: 140px;
+  font-size: 1.25rem;
+  width: fit-content;
+  justify-self: center;
+}

@@ -1,0 +1,38 @@
+.featured-results {
+  background-color: var(--color-light);
+  color: black;
+}
+
+.featured-results-container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 60px;
+}
+
+.results-card {
+  width: 250px;
+  height: 250px;
+  background: white;
+  border: 4px solid black;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+.results-card-number {
+  align-self: end;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: black;
+}
+
+.results-card-text {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: black;
+}

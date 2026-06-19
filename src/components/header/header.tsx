@@ -7,7 +7,7 @@ import '../../common.css'
 
 const navItems = [
     { label: 'Inicio', to: '/' },
-    { label: 'Servicios', to: '#servicios' },
+    { label: 'Servicios', to: '/#servicios' },
     { label: 'Equipo', to: '/equipo' },
     { label: 'Quiénes somos', to: '/nosotros' },
     { label: 'Contáctenos', to: '/contacto' },

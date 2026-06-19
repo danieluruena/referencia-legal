@@ -14,6 +14,7 @@
   font-size: 1rem;
   cursor: pointer;
   border-bottom: 4px solid #8e6f42;
+  width: fit-content;
 }
 
 .main-button:hover {
