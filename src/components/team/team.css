@@ -85,3 +85,15 @@
   width: 80px;
   height: 70px;
 }
+
+.principle-card h3 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.principle-card p {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
