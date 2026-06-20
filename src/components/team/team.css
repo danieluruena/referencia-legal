@@ -73,23 +73,37 @@
   background-color: #ede8e1;
   border: 5px solid #ad864e;
   border-radius: 60px;
-  padding: 20px 30px 30px 30px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
   position: relative;
 }
 
+
+.principle-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.principle-card:nth-child(2) .principle-card-header h3{
+  margin-top: 18px;
+}
+
 .principle-card img {
-  align-self: center;
-  width: 80px;
-  height: 70px;
+  width: 120px;
+  margin-right: -40px;
 }
 
 .principle-card h3 {
+  flex: 1 1 auto;
   font-size: 30px;
   font-weight: 700;
-  text-align: center;
+  text-align: initial;
+  margin: 0;
 }
 
 .principle-card p {
