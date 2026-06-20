@@ -1,0 +1,113 @@
+
+.team {
+  padding: 50px 0px 20px 0px;
+  background-color: #ede8e1;
+}
+
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.section-title {
+  font-size: 60px;
+  color: #ad864e;
+  text-align: center;
+  font-weight: bold;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.team-member img {
+  width: 450px;
+  height: 450px;
+}
+
+
+.team-member, .principle-card h3 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.team-member, .principle-card  p {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.principles {
+  padding: 50px 0px 20px 0px;
+  background-color: #081e2d;
+}
+
+.principles-content {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.principles-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.principle-card {
+  background-color: #ede8e1;
+  border: 5px solid #ad864e;
+  border-radius: 60px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+}
+
+
+.principle-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.principle-card:nth-child(2) .principle-card-header h3{
+  margin-top: 18px;
+}
+
+.principle-card img {
+  width: 120px;
+  margin-right: -40px;
+}
+
+.principle-card h3 {
+  flex: 1 1 auto;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: initial;
+  margin: 0;
+}
+
+.principle-card p {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
