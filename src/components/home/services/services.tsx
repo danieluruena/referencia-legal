@@ -9,6 +9,8 @@ import sucesionesIcon from '../../../assets/services/sucesiones.webp'
 import violenciaIcon from '../../../assets/services/violencia.webp'
 import unionIcon from '../../../assets/services/union.webp'
 import adopcionIcon from '../../../assets/services/adopciones.webp'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface Service {
   title: string
@@ -74,7 +76,10 @@ export const Services = () => {
             <img src={serviceData.icon} alt="" className="service-item-icon" />
             <h4 className="service-item-title">{serviceData.title}</h4>
             <p className="service-item-description">{serviceData.description}</p>
-            <a href="" className="service-item-link">Más información</a>
+            <a href="" className="service-item-link">
+              <FontAwesomeIcon icon={faAngleRight} className="carousel-icon"/>
+              Más información
+            </a>
           </div>
         ))}
       </div>
