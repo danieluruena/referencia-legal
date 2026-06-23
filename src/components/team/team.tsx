@@ -13,7 +13,7 @@ export const Team: FC = () => {
     <>
       <section id='team' className='team'>
         <div className='team-content'>
-          <h2 className='section-title'>NUESTRO EQUIPO DE EXPERTOS</h2>
+          <h2 className='alternative-title'>NUESTRO EQUIPO DE EXPERTOS</h2>
           <div className='team-members'>
             <div className='team-member'>
               <img src={melisaImg} alt="MELISA ARBOLEDA OSPINA" />
@@ -41,7 +41,7 @@ export const Team: FC = () => {
 
       <section id='principles' className='principles'>
         <div className='principles-content'>
-          <h2 className='section-title'>PRINCIPIOS Y VALORES</h2>
+          <h2 className='alternative-title'>PRINCIPIOS Y VALORES</h2>
           <div className='principles-cards'>
             <div className='principle-card'>
               <div className='principle-card-header'>
