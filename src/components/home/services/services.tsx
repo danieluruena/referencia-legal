@@ -65,7 +65,7 @@ export const Services = () => {
         <div className="services-logo">
           <img src={logoImage} alt="Referencia Legal" />
         </div>
-        <h2 className="services-title">DERECHO DE FAMILIA</h2>
+        <h2 className="alternative-title">DERECHO DE FAMILIA</h2>
         <p className="services-description">Cada caso lo trabajamos con  experiencia, criterio y  atención personalizada.</p>
       </div>
       <div className="services-items">

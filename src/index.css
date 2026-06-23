@@ -22,6 +22,30 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('./assets/fonts/Arpona-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('./assets/fonts/Arpona-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('./assets/fonts/Arpona-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
 :root {
   --color-light: #f5f1e8;
   --color-dark: #081e2d;
@@ -31,7 +55,6 @@
 
 * {
   font-family: 'Poppins', sans-serif;
-  color: var(--color-light);
   margin: 0;
   padding: 0;
   box-sizing: border-box;

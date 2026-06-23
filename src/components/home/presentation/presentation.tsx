@@ -13,7 +13,7 @@ export const Presentation = () => {
         </div>
       </div>
       <div className="presentation-description">
-        <h1>EN REFERENCIA LEGAL</h1>
+        <h1 className="alternative-title">EN REFERENCIA LEGAL</h1>
         <p>Entendemos el Derecho de Familia como una herramienta clara y humana, con el bienestar de tu familia como nuestra prioridad. Con un enfoque estratégico y cercano, acompañamos cada proceso con experiencia, transparencia y rigor.</p>
       </div>
     </div>

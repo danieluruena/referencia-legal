@@ -21,3 +21,10 @@
   background-color: #dfa54e;
   border-bottom: 4px solid #dfa54e;
 }
+
+.alternative-title {
+  font-family: 'Arpona', sans-serif;
+  font-size: 3.5rem;
+  color: var(--color-primary);
+  text-align: center;
+}

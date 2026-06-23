@@ -1,19 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { NavLink } from 'react-router-dom'
 import { socialLinks } from './header.data'
+import { useInView } from '../../hooks/useInView'
 import logoImage from '../../assets/logo_referencia_legal.png'
 import './header.css'
 import '../../common.css'
 
 const navItems = [
     { label: 'Inicio', to: '/' },
-    { label: 'Servicios', to: '/#servicios' },
+    {
+      label: 'Servicios', 
+      to: '/#servicios', 
+      sectionId: 'servicios', 
+    },
     { label: 'Equipo', to: '/equipo' },
     { label: 'Quiénes somos', to: '/nosotros' },
     { label: 'Contáctenos', to: '/contacto' },
 ]
 
 export const Header = () => {
+    const servicesInView = useInView('servicios')
+
     return (
         <header className="header">
             <div className="header-content max-width">
@@ -50,9 +57,12 @@ export const Header = () => {
                             {navItems.map((navItem) => (
                                 <li className="navbar-item" key={navItem.to}>
                                     <NavLink
-                                        className={({ isActive }) => 
-                                            `navbar-link${isActive ? ' navbar-link-active' : ''}`
-                                        }
+                                        className={({ isActive }) => {
+                                            if (navItem.sectionId) {
+                                                return `navbar-link${servicesInView ? ' navbar-link-active' : ''}`
+                                            }
+                                            return `navbar-link${isActive ? ' navbar-link-active' : ''}`
+                                        }}
                                         end={navItem.to === '/'}
                                         to={navItem.to}
                                     >

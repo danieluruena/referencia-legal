@@ -34,7 +34,7 @@
   border-radius: 4px;
 
   box-shadow:
-    0 65px 0 #000; /* segundo botón */
+    0 65px 0 #000;
 }
 
 .video-wrapper::after {
@@ -56,11 +56,7 @@
   padding: 0 40px;
 }
 
-.presentation-description h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  text-align: center;
+.presentation-description .alternative-title {
   align-self: center;
 }
 
