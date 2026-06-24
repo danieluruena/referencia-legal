@@ -5,7 +5,7 @@ import { Header } from './components/header/header'
 
 const Home = lazy(() => import('./components/home/home.tsx').then(module => ({ default: module.Home })))
 const Team = lazy(() => import('./components/team/team.tsx').then(module => ({ default: module.Team })))
-const AboutMe = lazy(() => import('./components/aboutMe/aboutMe.tsx').then(module => ({ default: module.AboutMe })))
+const AboutUs = lazy(() => import('./components/aboutUs/aboutUs.tsx').then(module => ({ default: module.AboutUs })))
 const Contact = lazy(() => import('./components/contact/contact.tsx').then(module => ({ default: module.Contact })))
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/equipo" element={<Team />} />
-            <Route path="/nosotros" element={<AboutMe />} />
+            <Route path="/nosotros" element={<AboutUs />} />
             <Route path="/contacto" element={<Contact />} />
           </Routes>
         </Suspense>
