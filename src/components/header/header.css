@@ -1,14 +1,8 @@
 .header {
     text-align: center;
-    background: #081e2d;
+    background: var(--color-dark);
     border-bottom: 8px solid;
-    border-image:
-        linear-gradient(
-            to right,
-            transparent 0%,
-            #ad864e 60%,
-            #ad864e 100%
-        ) 1;
+    border-image: linear-gradient(to right, transparent 0%, var(--color-primary) 60%) 1;
 }
 
 .header-content {
@@ -49,7 +43,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 18px;
-    color: #f5f1e8;
+    color: var(--color-light);
 } 
 
 .header-social-links {
@@ -76,7 +70,7 @@
     place-items: center;
     width: 34px;
     height: 34px;
-    color: #f5f1e8;
+    color: var(--color-light);
     font-size: 2rem;
     background: transparent;
     line-height: 1;
@@ -115,7 +109,7 @@
 
 .navbar-link {
     position: relative;
-    color: #f5f1e8;
+    color: var(--color-light);
     font-size: clamp(1rem, 1.7vw, 1.35rem);
     font-weight: 500;
     line-height: 1.2;
@@ -142,7 +136,7 @@
 .navbar-link:hover,
 .navbar-link:focus-visible,
 .navbar-link-active {
-    color: #ad864e;
+    color: var(--color-primary);
 }
 
 .navbar-link:hover::after,

@@ -1,6 +1,6 @@
 .home {
-  background: #081e2d;
-  color: #f5f1e8;
+  background: var(--color-dark);
+  color: var(--color-light);
   overflow: hidden;
 }
 
@@ -11,87 +11,7 @@
   background: linear-gradient(
     to right,
     transparent 0%,
-    #ad864e 60%,
-    #ad864e 100%
+    var(--color-primary) 60%,
+    var(--color-primary) 100%
   );
-}
-
-.home-hero {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.home-description {
-  align-self: center;
-  display: grid;
-  gap: 40px;
-  font-size: 1.25rem;
-  z-index: 4;
-  padding-left: 40px;
-}
-
-.home-description hr {
-  border: none;
-  height: 4px;
-  width: 70%;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    #ad864e 20%,
-    #ad864e 50%,
-    #ad864e 80%,
-    transparent 100%
-  );
-}
-
-.image-container img {
-  display: block;
-  width: 115%;
-  transform: translateX(-15%);
-  height: auto;
-  z-index: 3;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 20%,
-    black 80%,
-    transparent 100%
-  );
-
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 20%,
-    black 80%,
-    transparent 100%
-  );
-}
-
-.main-button {
-  margin-top: 10%;
-  margin-right: 140px;
-  font-size: 1.25rem;
-  width: fit-content;
-  justify-self: center;
-}
-
-.slogan {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  padding-top: 20px;
-  padding-left: 40px;
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-.slogan-icon img {
-  width: 200px;
-}
-
-.slogan p {
-  align-self: center;
-  justify-self: center;
-  width: 1000px;
 }

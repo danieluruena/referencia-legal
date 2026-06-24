@@ -1,29 +1,28 @@
 import './home.css'
 import '../../common.css'
-import teamImage from '../../assets/home/001.webp'
-import iconImage from '../../assets/icon.webp'
+import { Hero } from './hero/hero'
+import { Slogan } from './slogan/slogan'
+import { FeaturedResults } from './featuredResults/featuredResults'
+import { Presentation } from './presentation/presentation'
+import { Services } from './services/services'
+import { useScrollAnimation } from '../../hooks/useScrollanimation'
+import { useHashScroll } from '../../hooks/useHashScroll'
+import { Testimonies } from './testimonies/testimonies'
 
 export function Home() {
+  useScrollAnimation()
+  useHashScroll()
   return (
     <div className="home">
       <div className="home-container">
-        <div className="home-hero max-width">
-          <div className="home-description">
-            <h1 className="home-title">Especialistas en Derecho de Familia con enfoque estratégico y humano.</h1>
-            <hr />
-            <button className="main-button">Agendar consulta</button>
-          </div>
-          <div className="image-container">
-            <img src={teamImage} alt="" />
-          </div>
-        </div>
+        <Hero />
         <hr />
-        <div className="slogan max-width">
-          <div className="slogan-icon">
-            <img src={iconImage} alt="" />
-          </div>
-          <p>Transformamos el Derecho de Familia en un proceso claro y cercano.</p>
-        </div>
+        <Slogan />
+        <FeaturedResults />
+        <Presentation />
+        <hr />
+        <Services />
+        <Testimonies />
       </div>
     </div>
   )
