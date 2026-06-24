@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import './aboutUs.css'
 import '../../common.css'
 import misionImg from '../../assets/aboutUs/mision.webp'
