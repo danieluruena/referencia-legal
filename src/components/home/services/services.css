@@ -25,7 +25,7 @@
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 100px
+  gap: 100px;
 }
 
 .service-item {
@@ -41,7 +41,7 @@
 
 .service-item-title {
   font-size: 1.75rem;
-  color: var(--color-secondary)
+  color: var(--color-secondary);
 }
 
 .service-item-description {
@@ -60,7 +60,7 @@
 }
 
 .service-item-link:hover {
-  color: var(--color-secondary)
+  color: var(--color-secondary);
 }
 
 .services-button {
@@ -68,4 +68,5 @@
   margin-top: 40px;
   margin-right: 40px;
   font-size: 1.25rem;
+  text-decoration: none;
 }

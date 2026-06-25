@@ -4,6 +4,7 @@ import logoImage from '../../assets/logo_referencia_legal.png'
 import './header.css'
 import '../../common.css'
 import { SocialLinks } from '../socialLinks/socialLinks'
+import { WhatsAppButton } from '../whatsappButton/whatsappButton'
 
 const navItems = [
     { label: 'Inicio', to: '/' },
@@ -34,6 +35,7 @@ export const Header = () => {
                 <div className="header-navigation">
                     <div className="header-contact-row">
                       <SocialLinks />
+                      <WhatsAppButton showClassic={true} />
                     </div>
 
                     <nav className="navbar">
