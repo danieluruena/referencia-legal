@@ -1,10 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { NavLink } from 'react-router-dom'
-import { socialLinks } from './header.data'
 import { useInView } from '../../hooks/useInView'
 import logoImage from '../../assets/logo_referencia_legal.png'
 import './header.css'
 import '../../common.css'
+import { SocialLinks } from '../socialLinks/socialLinks'
 
 const navItems = [
     { label: 'Inicio', to: '/' },
@@ -34,22 +33,7 @@ export const Header = () => {
 
                 <div className="header-navigation">
                     <div className="header-contact-row">
-                      <div className="header-social-links">
-                            <ul className="header-social-list">
-                                {socialLinks.map((socialLink) => (
-                                    <li className="header-social-item" key={socialLink.label}>
-                                        <a
-                                            className="header-social-link"
-                                            href={socialLink.href}
-                                            rel="noreferrer"
-                                            target="_blank"
-                                        >
-                                            <FontAwesomeIcon icon={socialLink.icon} />
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                      <SocialLinks />
                     </div>
 
                     <nav className="navbar">
