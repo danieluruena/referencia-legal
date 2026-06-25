@@ -2,6 +2,7 @@ import './App.css'
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Header } from './components/header/header'
+import { Footer } from './components/footer/footer.tsx'
 
 const Home = lazy(() => import('./components/home/home.tsx').then(module => ({ default: module.Home })))
 const Team = lazy(() => import('./components/team/team.tsx').then(module => ({ default: module.Team })))
@@ -22,6 +23,7 @@ function App() {
           </Routes>
         </Suspense>
       </div>
+      <Footer />
     </>
   )
 }
