@@ -34,8 +34,8 @@ export const Header = () => {
 
                 <div className="header-navigation">
                     <div className="header-contact-row">
-                      <SocialLinks />
                       <WhatsAppButton showClassic={true} />
+                      <SocialLinks />
                     </div>
 
                     <nav className="navbar">
