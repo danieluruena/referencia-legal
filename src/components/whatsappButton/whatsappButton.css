@@ -54,6 +54,7 @@
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
+  width: fit-content;
 }
 
 .whatsapp-classic-button:hover {
