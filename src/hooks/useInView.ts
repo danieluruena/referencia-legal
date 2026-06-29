@@ -1,0 +1,23 @@
+import { useEffect, useState } from 'react'
+
+export const useInView = (elementId: string) => {
+  const [isInView, setIsInView] = useState(false)
+
+  useEffect(() => {
+    const element = document.getElementById(elementId)
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting)
+      },
+      { threshold: 0.1 },
+    )
+
+    observer.observe(element)
+
+    return () => observer.unobserve(element)
+  }, [elementId])
+
+  return isInView
+}

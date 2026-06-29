@@ -1,0 +1,30 @@
+.max-width {
+  max-width: 1800px
+}
+
+.main-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: #ad864e;
+  color: #f5f1e8;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 4px solid #8e6f42;
+  width: fit-content;
+}
+
+.main-button:hover {
+  background-color: #dfa54e;
+  border-bottom: 4px solid #dfa54e;
+}
+
+.alternative-title {
+  font-family: 'Arpona', sans-serif;
+  font-size: 3.5rem;
+  color: var(--color-primary);
+  text-align: center;
+}

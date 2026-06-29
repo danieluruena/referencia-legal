@@ -1,0 +1,17 @@
+.home {
+  background: var(--color-dark);
+  color: var(--color-light);
+  overflow: hidden;
+}
+
+.home-container > hr {
+  border: none;
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-primary) 60%,
+    var(--color-primary) 100%
+  );
+}
