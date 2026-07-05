@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useInView } from '../../hooks/useInView'
 import logoImage from '../../assets/logo_referencia_legal.png'
 import './header.css'
+import './header.responsive.css'
 import '../../common.css'
 import { SocialLinks } from '../socialLinks/socialLinks'
 import { WhatsAppButton } from '../whatsappButton/whatsappButton'
@@ -20,6 +24,7 @@ const navItems = [
 
 export const Header = () => {
     const servicesInView = useInView('servicios')
+    const [menuOpen, setMenuOpen] = useState(false)
 
     return (
         <header className="header">
@@ -33,12 +38,27 @@ export const Header = () => {
                 </NavLink>
 
                 <div className="header-navigation">
-                    <div className="header-contact-row">
+                    <div className="header-contact-row header-contact-row-desktop">
                       <WhatsAppButton showClassic={true} />
                       <SocialLinks />
                     </div>
 
-                    <nav className="navbar">
+                    <button
+                        aria-controls="primary-navigation"
+                        aria-expanded={menuOpen}
+                        aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+                        className="menu-toggle"
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                        type="button"
+                    >
+                        <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
+                    </button>
+
+                    <nav className={`navbar${menuOpen ? ' is-open' : ''}`} id="primary-navigation">
+                        <div className="mobile-menu-actions">
+                          <WhatsAppButton showClassic={false} />
+                          <SocialLinks />
+                        </div>
                         <ul className="navbar-list">
                             {navItems.map((navItem) => (
                                 <li className="navbar-item" key={navItem.to}>
@@ -50,6 +70,7 @@ export const Header = () => {
                                             return `navbar-link${isActive ? ' navbar-link-active' : ''}`
                                         }}
                                         end={navItem.to === '/'}
+                                        onClick={() => setMenuOpen(false)}
                                         to={navItem.to}
                                     >
                                         {navItem.label}
