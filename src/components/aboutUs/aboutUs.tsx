@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import './aboutUs.css'
+import './aboutUs.responsive.css'
 import '../../common.css'
 import misionImg from '../../assets/aboutUs/mision.webp'
 import visionImg from '../../assets/aboutUs/vision.webp'
