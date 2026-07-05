@@ -1,4 +1,5 @@
 import './contact.css'
+import './contact.responsive.css'
 import '../../common.css'
 import { WhatsAppButton } from '../whatsappButton/whatsappButton'
 

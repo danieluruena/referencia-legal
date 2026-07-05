@@ -1,1 +1,50 @@
 /* Responsive styles for contact component */
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 24px 16px;
+  }
+
+  .alternative-title {
+    text-align: center;
+    font-size: 3.2rem;
+  }
+
+  .contact-description {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .contact-sub-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 24px;
+  }
+
+  .contact-form {
+    gap: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .form-button {
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    min-height: 320px;
+  }
+
+  .address-container {
+    font-size: 1.1rem;
+    gap: 24px;
+    padding-bottom: 12px;
+  }
+}
