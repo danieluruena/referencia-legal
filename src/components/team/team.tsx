@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import './team.css'
+import './team.responsive.css'
 import '../../common.css'
 import melisaImg from '../../assets/team/Melisa.webp'
 import carolinaImg from '../../assets/team/Carolina.webp'
