@@ -1,1 +1,11 @@
-/* Responsive styles for home component */
+
+@media (max-width: 768px) {
+  .home-container {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .home-container > hr {
+    margin: 24px 0;
+  }
+}

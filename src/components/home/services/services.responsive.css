@@ -1,0 +1,47 @@
+@media (max-width: 768px) {
+  .services-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 0 8px;
+    gap: 20px;
+  }
+
+  .services-logo {
+    width: 90%;
+  }
+
+  .services-description {
+    grid-column: auto;
+    width: min(100%, 720px);
+    font-size: 1.5rem;
+  }
+
+  .services-items {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 8px;
+  }
+
+  .service-item {
+    gap: 16px;
+  }
+
+  .service-item-icon {
+    width: 60px;
+  }
+
+  .service-item-title {
+    font-size: 1.45rem;
+  }
+
+  .service-item-description {
+    padding: 0 16px;
+  }
+
+  .services-button {
+    justify-self: center;
+    margin: 24px auto 0;
+  }
+}

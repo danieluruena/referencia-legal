@@ -1,4 +1,5 @@
 import './hero.css'
+import './hero.responsive.css'
 import '../../../common.css'
 import teamImage from '../../../assets/home/001.webp'
 import { whatsappUrl } from '../../../utils/constants'

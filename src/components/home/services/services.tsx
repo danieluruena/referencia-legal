@@ -1,4 +1,5 @@
 import './services.css'
+import './services.responsive.css'
 import '../../../common.css'
 import logoImage from '../../../assets/logo_referencia_legal.png'
 import divorciosIcon from '../../../assets/services/divorcios.webp'

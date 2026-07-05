@@ -1,4 +1,5 @@
 import './slogan.css'
+import './slogan.responsive.css'
 import '../../../common.css'
 import iconImage from '../../../assets/icon.webp'
 

@@ -105,7 +105,7 @@
   }
 
   .header-logo {
-    width: 170px;
+    width: clamp(180px, 22vw, 240px);
   }
 
   .header-contact-row {

@@ -1,4 +1,5 @@
 import './featuredResults.css'
+import './featuredResults.responsive.css'
 import '../../../common.css'
 
 export const FeaturedResults = () => {

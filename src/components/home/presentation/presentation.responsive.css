@@ -1,0 +1,33 @@
+@media (max-width: 768px) {
+  .presentation {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "description"
+      "video";
+    padding: 24px 12px;
+    gap: 24px;
+  }
+
+  .presentation-description {
+    grid-area: description;
+    padding: 0 8px;
+  }
+
+  .presentation-video-container {
+    grid-area: video;
+  }
+
+  .video-wrapper {
+    max-width: 100%;
+    border-width: 8px;
+  }
+
+  .presentation-description .alternative-title {
+    font-size: 2rem;
+  }
+
+  .presentation-description p {
+    font-size: 1.25rem;
+  }
+}
