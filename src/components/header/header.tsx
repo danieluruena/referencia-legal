@@ -99,7 +99,6 @@ export const Header = () => {
                             </NavLink>
                         </div>
                         <div className="mobile-menu-actions">
-                          <WhatsAppButton showClassic={false} />
                           <SocialLinks />
                         </div>
                         <ul className="navbar-list">

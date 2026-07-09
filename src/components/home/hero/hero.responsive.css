@@ -14,6 +14,11 @@
     
   }
 
+  .hero-description h1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
   .hero-description hr {
     width: 100%;
   }

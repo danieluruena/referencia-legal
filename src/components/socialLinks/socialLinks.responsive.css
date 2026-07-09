@@ -1,1 +1,12 @@
 /* Responsive styles for socialLinks component */
+
+@media (max-width: 768px) {
+  .social-links .social-link {
+    transition: transform 0.3s ease;
+  }
+
+  .social-links .social-link:hover,
+  .social-links .social-link:focus-visible {
+    transform: scale(1.25);
+  }
+}

@@ -59,6 +59,11 @@
   width: 100%;
 }
 
+.mobile-menu-header,
+.mobile-menu-logo-link {
+  display: none;
+}
+
 .mobile-menu-actions {
   display: none;
 }
