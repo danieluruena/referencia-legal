@@ -1,73 +1,133 @@
 @media (max-width: 768px) {
-  .header-content {
-    width: 94%;
-    min-height: auto;
-    padding: 14px 0;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  body.menu-open {
+    overflow: hidden;
   }
 
-  .header-navigation {
-    width: 100%;
-    align-items: stretch;
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 120;
+  }
+
+  .header-content {
+    width: min(50%, 1000px);
+    min-height: auto;
+    padding: 14px 16px;
+    gap: 16px;
+    justify-content: center;
     position: relative;
   }
 
-  .header-contact-row {
-    flex-direction: row;
+  .header-logo-link {
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
   }
 
-  .header-contact-row > *:not(.menu-toggle) {
-    flex: 1;
+  .header-navigation {
+    width: auto;
+    align-items: stretch;
+    display: flex;
+    justify-content: flex-start;
   }
 
-  .header-contact-row-desktop {
+  .header-contact-row {
     display: none;
   }
 
   .menu-toggle {
     display: inline-flex;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
+    position: fixed;
+    top: 18px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
-    background: var(--color-primary);
     color: var(--color-dark);
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    z-index: 180;
+    transition: transform 220ms ease, background-color 220ms ease;
+  }
+
+  .menu-toggle.is-open {
+    transform: rotate(180deg);
+    background: #fff;
+    color: var(--color-dark);
+  }
+
+  .menu-toggle.is-open .menu-toggle-icon {
+    transform: rotate(90deg);
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+    z-index: 140;
+  }
+
+  .mobile-menu-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .navbar {
-    display: none;
-    position: absolute;
-    top: calc(100% + 14px);
+    position: fixed;
+    top: 0;
     right: 0;
-    left: 0;
+    width: min(85vw, 360px);
+    height: 100dvh;
+    max-height: 100dvh;
     background: var(--color-dark);
-    border: 2px solid #ad864e;
-    border-radius: 20px;
-    padding: 20px 18px;
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
-    z-index: 100;
+    border-left: 2px solid #ad864e;
+    padding: 72px 18px;
+    box-shadow: -12px 0 36px rgba(0, 0, 0, 0.24);
+    z-index: 160;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+    transform: translateX(100%);
+    transition: transform 260ms ease;
+    overflow-y: auto;
   }
 
   .navbar.is-open {
-    display: block;
+    transform: translateX(0);
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6px;
+  }
+
+  .mobile-menu-logo-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-menu-logo-link .header-logo {
+    width: clamp(300px, 33vw, 320px);
+    margin: 0 auto;
   }
 
   .navbar-list {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 18px;
+    gap: 8px;
     padding: 0;
     margin: 0;
+    width: 100%;
   }
 
   .navbar-item {
@@ -76,26 +136,23 @@
 
   .navbar-link {
     display: block;
-    font-size: 1.15rem;
-    padding: 16px 18px;
-    border-radius: 16px;
+    font-size: 1.1rem;
+    padding: 12px 14px;
+    border-radius: 14px;
     color: var(--color-light);
     width: 100%;
+    text-align: left;
   }
 
   .mobile-menu-actions {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin: 2px 0 4px;
   }
 
   .mobile-menu-actions a {
     width: fit-content;
-  }
-
-  .header-contact-row-desktop {
-    display: none;
   }
 
   .navbar-link:hover,
@@ -106,9 +163,5 @@
 
   .header-logo {
     width: clamp(180px, 22vw, 240px);
-  }
-
-  .header-contact-row {
-    padding: 0 4px;
   }
 }
