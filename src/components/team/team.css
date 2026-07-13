@@ -1,6 +1,7 @@
 .team {
   padding: 50px 0px 20px 0px;
   background-color: #ede8e1;
+  padding: 40px;
 }
 
 .team-content {
@@ -8,11 +9,14 @@
   flex-direction: column;
   align-items: center;
   gap: 60px;
+  margin: 0 auto;
 }
 
 .team-members {
   display: grid;
-  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 40px;
 }
 
 .team-member {
@@ -23,10 +27,8 @@
 }
 
 .team-member img {
-  width: min(320px, 100%);
-  height: auto;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 450px;
 }
 
 .team-member h3 {
@@ -46,11 +48,12 @@
 .principles {
   padding: 50px 0px 40px 0px;
   background-color: #081e2d;
+  padding: 40px;
 }
 
 .principles-content {
   max-width: 1800px;
-  margin: 0 10px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -60,6 +63,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
+  justify-items: center;
 }
 
 .principle-card {
@@ -71,6 +75,7 @@
   flex-direction: column;
   gap: 30px;
   position: relative;
+  max-width: 420px;
 }
 
 .principle-card-header {
