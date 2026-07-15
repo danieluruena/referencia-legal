@@ -69,8 +69,12 @@ export const Services = () => {
         <div className="services-logo">
           <img src={logoImage} alt="Referencia Legal" />
         </div>
-        <h2 className="alternative-title">DERECHO DE FAMILIA</h2>
-        <p className="services-description">Cada caso lo trabajamos con  experiencia, criterio y  atención personalizada.</p>
+        <div className="services-title">
+          <h2 className="alternative-title">DERECHO DE FAMILIA</h2>
+        </div>
+        <div className="services-description">
+          <p>Cada caso lo trabajamos con  experiencia, criterio y  atención personalizada.</p>
+        </div>
       </div>
       <div className="services-items">
         {servicesData.map((serviceData) => (

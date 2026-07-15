@@ -19,8 +19,9 @@
   }
 
   .video-wrapper {
-    max-width: 100%;
+    max-width: 90%;
     border-width: 8px;
+    height: fit-content;
   }
 
   .presentation-description .alternative-title {

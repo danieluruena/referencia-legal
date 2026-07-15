@@ -1,10 +1,12 @@
 @media (max-width: 768px) {
+  .services {
+    padding: 40px 20px;
+  }
   .services-head {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
-    padding: 0 8px;
     gap: 20px;
   }
 
@@ -42,6 +44,25 @@
 
   .services-button {
     justify-self: center;
-    margin: 24px auto 0;
+    margin: 24px auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1400px) {
+  .services-items {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .services-logo {
+    justify-self: start;
+  }
+
+  .services-items {
+    gap: 40px;
+  }
+
+  .service-item {
+    max-width: 80%;
   }
 }

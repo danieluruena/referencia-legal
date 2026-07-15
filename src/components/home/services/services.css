@@ -8,17 +8,24 @@
   display: grid;
   grid-template-columns: 20% 80%;
   align-items: center;
+  justify-items: center;
   row-gap: 40px;
 }
 
+.services-title {
+  width: fit-content;
+}
+
 .services-logo img {
-  width: 100%;
+  width: 344px;
+  justify-self: start;
 }
 
 .services-description {
   grid-column: 1 / 3;
   text-align: center;
   font-size: 2rem;
+  width: fit-content;
 }
 
 .services-items {
