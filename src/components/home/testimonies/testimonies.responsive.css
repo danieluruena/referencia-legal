@@ -1,30 +1,33 @@
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
+  .testimonies-videos-carousel-container {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+  }
+
   .testimonies-videos-carousel {
     display: grid;
-    grid-template-columns: 1% 85% 1% ;
+    grid-template-columns: 10% 70% 10%;
     gap: 16px;
-    padding: 16px;
+    padding: 0;
     align-items: center;
     justify-items: center;
+    width: 50%;
+    overflow: hidden;
+    height: 70vh;
   }
 
   .testimonies-videos-container {
     position: relative;
-    min-height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 8px;
     width: 100%;
   }
 
   .testimonies-video {
     position: absolute;
-    inset: 0;
     width: 100%;
-    height: 100%;
-    max-width: none;
-    aspect-ratio: 9 / 16;
     margin: 0 auto;
     border-width: 12px;
     opacity: 0;
@@ -37,7 +40,6 @@
     z-index: 1;
   }
 
-
   .testimonies-video.prev,
   .testimonies-video.next,
   .testimonies-video.hidden {
@@ -46,6 +48,13 @@
     z-index: 0;
   }
 
+  .testimonies-video.prev {
+    transform: translateX(-200%);
+  }
+
+  .testimonies-video.next {
+    transform: translateX(200%);
+  }
 
   .testimonies-videos-carousel-container h2,
   .testimonies-videos-carousel-container .alternative-title {
@@ -53,10 +62,15 @@
     line-height: 1.1;
   }
 
-  .carousel-icon {
-    height: 1.4rem;
-    font-size: 1.4rem;
- }
+  .prev-btn,
+  .next-btn {
+    justify-self: center;
+  }
 }
 
-
+@media (max-width: 768px) {
+  .testimonies-videos-carousel {
+    width: 100%;
+    height: 55vh;
+  }
+}
