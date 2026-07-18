@@ -82,14 +82,14 @@ export const Services = () => {
             <img src={serviceData.icon} alt="" className="service-item-icon" />
             <h4 className="service-item-title">{serviceData.title}</h4>
             <p className="service-item-description">{serviceData.description}</p>
-            <a href={whatsappUrl} className="service-item-link">
+            <a href={whatsappUrl} target="_blank" className="service-item-link">
               <FontAwesomeIcon icon={faAngleRight} className="carousel-icon"/>
               Más información
             </a>
           </div>
         ))}
       </div>
-      <a href={whatsappUrl} className="main-button services-button">Agendar consulta</a>
+      <a href={whatsappUrl} target="_blank" className="main-button services-button">Agendar consulta</a>
     </div>
   )
 }

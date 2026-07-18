@@ -10,7 +10,7 @@ export const Hero = () => {
       <div className="hero-description">
         <h1 className="hero-title">Especialistas en Derecho de Familia con enfoque estratégico y humano.</h1>
         <hr />
-        <a href={whatsappUrl} className="main-button hero-button">Agendar consulta</a>
+        <a href={whatsappUrl} target="_blank" className="main-button hero-button">Agendar consulta</a>
       </div>
       <div className="hero-image-container">
         <img src={teamImage} alt="" />
