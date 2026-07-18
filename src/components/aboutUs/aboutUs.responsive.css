@@ -1,7 +1,7 @@
-@media (max-width: 768px) {
+@media (max-width: 1600px) {
   .about-section-mission,
   .about-section-vision {
-    padding: 28px 16px;
+    padding: 0 16px 20px 16px;
     border-bottom-width: 6px;
   }
 
@@ -39,19 +39,22 @@
     mask-image: none;
     z-index: 3;
     mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 30%,
-    black 70%,
-    transparent 100%)
+      to right,
+      transparent 0%,
+      black 30%,
+      black 70%,
+      transparent 100%
+    );
   }
 
   .about-section-vision .about-image {
     padding-top: 0;
+    order: 1;
   }
 
   .about-section-vision .about-text-content {
     transform: none;
     width: 100%;
+    order: 2;
   }
 }
