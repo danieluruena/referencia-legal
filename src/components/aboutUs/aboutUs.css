@@ -18,8 +18,11 @@
   text-align: justify;
 }
 
-.about-section-mission,
 .about-section-vision {
+  padding: 52px;
+}
+
+.about-section-mission {
   padding: 52px;
   border-bottom: 8px solid;
   border-image: linear-gradient(

@@ -23,6 +23,11 @@ export const Team: FC = () => {
               <p>Directora Jurídica</p>
             </div>
             <div className='team-member'>
+              <img src={cristianImg} alt="CRISTIAN TORRES" />
+              <h3>CRISTIAN TORRES</h3>
+              <p>Director Administrativo y Comercial</p>
+            </div>
+            <div className='team-member'>
               <img src={carolinaImg} alt="CAROLINA RESTREPO" />
               <h3>CAROLINA RESTREPO</h3>
               <p>Abogada Especialista</p>
@@ -31,11 +36,6 @@ export const Team: FC = () => {
               <img src={santiagoImg} alt="SANTIAGO CARDONA" />
               <h3>SANTIAGO CARDONA</h3>
               <p>Auxiliar Jurídico</p>
-            </div>
-            <div className='team-member'>
-              <img src={cristianImg} alt="CRISTIAN TORRES" />
-              <h3>CRISTIAN TORRES</h3>
-              <p>Director Administrativo y Comercial</p>
             </div>
           </div>
         </div>
