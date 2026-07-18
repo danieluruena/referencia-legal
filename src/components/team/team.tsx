@@ -1,6 +1,8 @@
 import type { FC } from 'react'
 import './team.css'
+import './team.responsive.css'
 import '../../common.css'
+import '../../common.responsive.css'
 import melisaImg from '../../assets/team/Melisa.webp'
 import carolinaImg from '../../assets/team/Carolina.webp'
 import santiagoImg from '../../assets/team/Santiago.webp'
@@ -12,7 +14,7 @@ export const Team: FC = () => {
   return (
     <>
       <section id='team' className='team'>
-        <div className='team-content'>
+        <div className='team-content max-width'>
           <h2 className='alternative-title'>NUESTRO EQUIPO DE EXPERTOS</h2>
           <div className='team-members'>
             <div className='team-member'>
@@ -40,7 +42,7 @@ export const Team: FC = () => {
       </section>
 
       <section id='principles' className='principles'>
-        <div className='principles-content'>
+        <div className='principles-content max-width'>
           <h2 className='alternative-title'>PRINCIPIOS Y VALORES</h2>
           <div className='principles-cards'>
             <div className='principle-card'>
@@ -60,9 +62,7 @@ export const Team: FC = () => {
             </div>
             <div className='principle-card'>
               <div className='principle-card-header'>
-                <h3>Criterio ético 
-                  <br />
-                  y moral</h3>
+                <h3>Criterio ético y moral</h3>
                 <img src={check} alt="Check" />
               </div>
               <p>Seleccionamos cada caso con responsabilidad ética, ofreciendo un servicio honesto, justo y respetuoso de la ley.</p>

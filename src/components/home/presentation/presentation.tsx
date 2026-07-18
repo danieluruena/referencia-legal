@@ -1,4 +1,5 @@
 import './presentation.css'
+import './presentation.responsive.css'
 import '../../../common.css'
 import videoPauta from '../../../assets/home/pauta.webm'
 import videoPautaThumbnail from '../../../assets/home/pauta-thumbnail.webp'

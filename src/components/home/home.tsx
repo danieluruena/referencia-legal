@@ -1,4 +1,5 @@
 import './home.css'
+import './home.responsive.css'
 import '../../common.css'
 import { Hero } from './hero/hero'
 import { Slogan } from './slogan/slogan'

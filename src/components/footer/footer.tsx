@@ -1,5 +1,6 @@
 import { SocialLinks } from '../socialLinks/socialLinks'
 import './footer.css'
+import './footer.responsive.css'
 
 export const Footer = () => {
   return (

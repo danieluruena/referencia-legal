@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+  .slogan-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px 16px;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .slogan-icon img {
+    width: 140px;
+  }
+
+  .slogan p {
+    width: auto;
+    margin: 0 auto;
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slogan p {
+    width: auto;
+  }
+}
