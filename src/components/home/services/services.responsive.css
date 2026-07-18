@@ -14,6 +14,10 @@
     width: 90%;
   }
 
+  .services-logo img {
+    width: 100%;
+  }
+
   .services-description {
     grid-column: auto;
     width: min(100%, 720px);

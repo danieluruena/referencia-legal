@@ -40,3 +40,14 @@
     max-width: 100%;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1400px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .footer-location-section {
+    grid-column: 1 / 3;
+  }
+}

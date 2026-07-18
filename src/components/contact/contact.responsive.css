@@ -7,7 +7,7 @@
 
   .alternative-title {
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
   }
 
   .contact-description {
@@ -46,5 +46,27 @@
     font-size: 1.1rem;
     gap: 24px;
     padding-bottom: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1400px) {
+  .alternative-title,
+  .contact-description {
+    text-align: center;
+  }
+
+  .contact-sub-container {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    justify-items: center;
+    gap: 30px;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .address-container {
+    grid-column: 1 / 3;
   }
 }
