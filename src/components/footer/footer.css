@@ -48,3 +48,7 @@
 .footer-social-links {
   margin-bottom: 40px;
 }
+
+.hidden {
+  display: none;
+}
