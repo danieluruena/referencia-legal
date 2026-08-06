@@ -1,5 +1,5 @@
 .team {
-  padding: 50px 0px 20px 0px;
+  padding: 50px 0px 20px 40px;
   background-color: #ede8e1;
   padding: 40px;
 }
@@ -13,10 +13,9 @@
 }
 
 .team-members {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   width: 100%;
-  gap: 40px;
+  justify-content: center;
 }
 
 .team-member {
@@ -46,7 +45,7 @@
 }
 
 .principles {
-  padding: 50px 0px 40px 0px;
+  padding: 50px 40px 40px;
   background-color: #081e2d;
   padding: 40px;
 }
@@ -60,10 +59,9 @@
 }
 
 .principles-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 40px;
-  justify-items: center;
+  justify-content: center;
 }
 
 .principle-card {
