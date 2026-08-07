@@ -1,53 +1,70 @@
 .testimonies-videos-carousel-container {
   background: var(--color-light);
   padding: 40px;
+  
 }
 
 .testimonies-videos-carousel {
+  --video-w: 320px;
+  --video-h: calc(var(--video-w) * (16 / 9));
+  --arrow-size: 100px;
+  --gap: -10px;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px;
-  height: 60vh;
-  gap: 20px;
+  grid-template-columns: var(--arrow-size) 2fr var(--arrow-size);
   align-items: center;
-  overflow: hidden;
+  gap: var(--gap);
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 12px;
   position: relative;
 }
 
 .testimonies-videos-container {
   position: relative;
-  display: flex;
   width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+  height: var(--video-h);
+  overflow: hidden;
+  border-radius: 10px;
 }
+
 
 .testimonies-video {
   position: absolute;
-  aspect-ratio: 9 / 16;
-  border: 16px solid black;
+  top: 50%;
+  left: 50%;
+  width: var(--video-w);
+  height: var(--video-h);
+  border: 10px solid black;
   border-radius: 10px;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.45s ease-in-out, opacity 0.35s ease-in-out;
+  transform: translate(-50%, -50%) scale(0.88);
+  opacity: 0.55;
 }
 
 .testimonies-video.current {
-  transform: translateX(0);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 2;
 }
 
 .testimonies-video.prev {
-  transform: translateX(-120%);
+  left: 15%;
+  transform: translate(-50%, -50%) scale(0.82);
+  opacity: 0.65;
+  z-index: 1;
 }
 
 .testimonies-video.next {
-  transform: translateX(120%);
+  left: 85%;
+  transform: translate(-50%, -50%) scale(0.82);
+  opacity: 0.65;
+  z-index: 1;
 }
 
 .testimonies-video.hidden {
-  transform: translateX(0);
   opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+  z-index: 0;
 }
 
 .carousel-btn {
@@ -60,9 +77,11 @@
 }
 
 .prev-btn {
-  justify-self: end;
+  justify-self: center;
+  grid-column: 1;
 }
 
 .next-btn {
-  justify-self: start;
+  justify-self: center;
+  grid-column: 3;
 }
