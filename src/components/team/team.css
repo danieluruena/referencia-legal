@@ -1,5 +1,4 @@
 .team {
-  padding: 50px 0px 20px 40px;
   background-color: #ede8e1;
   padding: 40px;
 }
@@ -45,9 +44,9 @@
 }
 
 .principles {
-  padding: 50px 40px 40px;
   background-color: #081e2d;
-  padding: 40px;
+    padding: 40px 40px 70px 40px;
+
 }
 
 .principles-content {

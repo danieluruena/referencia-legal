@@ -10,6 +10,7 @@
   }
 
   .team-members {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -41,6 +42,7 @@
   }
 
   .principles-cards {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -71,12 +73,13 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1620px) {
+@media (min-width: 769px) and (max-width: 1500px) {
   .team-members {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .principles-cards {
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
