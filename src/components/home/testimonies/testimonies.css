@@ -1,7 +1,6 @@
 .testimonies-videos-carousel-container {
   background: var(--color-light);
   padding: 40px;
-  
 }
 
 .testimonies-videos-carousel {
@@ -27,7 +26,6 @@
   border-radius: 10px;
 }
 
-
 .testimonies-video {
   position: absolute;
   top: 50%;
@@ -36,7 +34,7 @@
   height: var(--video-h);
   border: 10px solid black;
   border-radius: 10px;
-  transition: transform 0.45s ease-in-out, opacity 0.35s ease-in-out;
+  transition: all 0.45s ease-in-out;
   transform: translate(-50%, -50%) scale(0.88);
   opacity: 0.55;
 }
