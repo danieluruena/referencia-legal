@@ -31,18 +31,22 @@
   border: 16px solid black;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
+  width: 332px;
 }
 
 .testimonies-video.current {
   transform: translateX(0);
+  z-index: 4;
 }
 
 .testimonies-video.prev {
   transform: translateX(-120%);
+  z-index: 3;
 }
 
 .testimonies-video.next {
   transform: translateX(120%);
+  z-index: 3;
 }
 
 .testimonies-video.hidden {

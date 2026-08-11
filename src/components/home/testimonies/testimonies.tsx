@@ -10,9 +10,6 @@ export const Testimonies = () => {
     'https://www.youtube.com/embed/_xlfdsx62d4',
     'https://www.youtube.com/embed/RST08_g9BcM',
     'https://www.youtube.com/embed/wtLu4vFxEls',
-    'https://www.youtube.com/embed/_xlfdsx62d4',
-    'https://www.youtube.com/embed/RST08_g9BcM',
-    'https://www.youtube.com/embed/wtLu4vFxEls',
   ]
   const [currentIndex, setCurrentIndex] = useState(0)
 
