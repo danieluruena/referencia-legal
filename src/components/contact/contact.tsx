@@ -2,8 +2,105 @@ import './contact.css'
 import './contact.responsive.css'
 import '../../common.css'
 import { WhatsAppButton } from '../whatsappButton/whatsappButton'
+import { Turnstile } from '@marsidev/react-turnstile'
+import { useState } from 'react'
+import { useMetaTags } from '../../hooks/useMetaTags'
+import { SubmitModal } from './submitModal/submitModal'
+
+type FieldErrors = {
+  name?: boolean
+  phone?: boolean
+  email?: boolean
+  message?: boolean
+}
+
+type ContactFormData = {
+  name: string
+  phone: string
+  email: string
+  message: string
+}
 
 export function Contact() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
+  const [turnstileToken, setToken] = useState('')
+  
+  useMetaTags({
+    title: 'Contacto | Solicita tu Obra Personalizada | Magda Castro',
+    description: 'Contáctame para solicitar obras personalizadas, servicios de performance, talleres o cualquier colaboración artística.',
+    image: 'https://magdacastro.com/assets/sobre-mi/me-1.webp',
+    url: 'https://magdacastro.com/contacto',
+  })
+
+  const extractFormValues = (form: HTMLFormElement): ContactFormData => {
+    const name = form.elements.namedItem('name') as HTMLInputElement
+    const phone = form.elements.namedItem('phone') as HTMLInputElement
+    const email = form.elements.namedItem('email') as HTMLInputElement
+    const message = form.elements.namedItem('message') as HTMLTextAreaElement
+
+    return {
+      name: name.value.trim(),
+      phone: phone.value.trim(),
+      email: email.value.trim(),
+      message: message.value.trim(),
+    }
+  }
+
+  const validateForm = (formValues: ContactFormData): boolean => {
+    const errors: FieldErrors = {}
+
+    if (!formValues.name) errors.name = true
+    if (!formValues.phone) errors.phone = true
+    if (!formValues.email) errors.email = true
+    if (!formValues.message) errors.message = true
+
+    setFieldErrors(errors)
+    return Object.keys(errors).length === 0
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const form = e.currentTarget
+
+    const formValues = extractFormValues(form)
+    
+    if (!validateForm(formValues)) {
+      return
+    }
+
+    try {
+      // const response = await fetch('/api/contact', {
+      //   method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify({ ...formValues, turnstileToken }),
+      // })
+
+      // if (!response.ok) {
+      //   console.error(`Error al enviar el mensaje: ${response.status}`)
+      //   throw new Error('Error al enviar el mensaje')
+      // }
+      
+
+      console.log('Mensaje enviado correctamente')
+      form.reset()
+      setFieldErrors({})
+      setIsModalOpen(true)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const handleFieldChange = (fieldName: keyof FieldErrors) => {
+    if (fieldErrors[fieldName]) {
+      setFieldErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors[fieldName]
+        return newErrors
+      })
+    }
+  }
   return (
     <div className="contact">
       <div className="contact-container max-width">
@@ -11,12 +108,16 @@ export function Contact() {
         <p className="contact-description">Estamos aquí para ayudarte con tus consultas legales. Contáctanos y recibirás asesoría profesional.</p>
         <div className="contact-sub-container">
           <div className="form-container">
-            <form action="" className="contact-form" method='POST'>
-              <input type="text" name="fullName" id="fullName" placeholder='Nombre completo' />
-              <input type="email" name="email" id="email" placeholder='Correo electrónico' />
-              <input type="tel" name="phone" id="phone" placeholder='Teléfono' />
-              <textarea name="question" id="question" placeholder='Consulta' rows={3}></textarea>
+            <form action="" className="contact-form" onSubmit={handleSubmit}>
+              <input type="text" name="name" id="name" placeholder='Nombre completo' onChange={() => handleFieldChange('name')}/>
+              <input type="email" name="email" id="email" placeholder='Correo electrónico' onChange={() => handleFieldChange('email')} />
+              <input type="tel" name="phone" id="phone" placeholder='Teléfono' onChange={() => handleFieldChange('phone')} />
+              <textarea name="message" id="message" placeholder='Mensaje' rows={3} onChange={() => handleFieldChange('message')}></textarea>
               <button className="main-button form-button" type="submit">Enviar mensaje</button>
+              <Turnstile
+                siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                onSuccess={(token) => { setToken(token) }}
+              />
             </form>
           </div>
           <div className="map-container">
@@ -36,6 +137,7 @@ export function Contact() {
           </div>
         </div>
       </div>
+      <SubmitModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
