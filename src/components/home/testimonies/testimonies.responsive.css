@@ -1,76 +1,40 @@
-@media (max-width: 1500px) {
-  .testimonies-videos-carousel-container {
-    padding: 20px;
-    display: grid;
-    gap: 20px;
-  }
+@media (min-width: 769px) and (max-width: 1520px) {
 
   .testimonies-videos-carousel {
+    --video-w: clamp(240px, 27vw, 320px);
+    --video-h: calc(var(--video-w) * (16 / 9));
+    --arrow-size: clamp(64px, 8vw, 100px);
+    --gap: 20px;
+
     display: grid;
-    grid-template-columns: 10% 70% 10%;
-    gap: 16px;
-    padding: 0;
+    grid-template-columns: var(--arrow-size) minmax(0, calc(var(--video-w) * 2.85)) var(--arrow-size);
     align-items: center;
-    justify-items: center;
-    width: 50%;
-    overflow: hidden;
-    height: 81vh;
-  }
-
-  .testimonies-videos-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: var(--gap);
     width: 100%;
-  }
-
-  .testimonies-video {
-    position: absolute;
-    width: 100%;
-    margin: 0 auto;
-    border-width: 12px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .testimonies-video.current {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 1;
-  }
-
-  .testimonies-video.prev,
-  .testimonies-video.next,
-  .testimonies-video.hidden {
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .testimonies-video.prev {
-    transform: translateX(-200%);
-  }
-
-  .testimonies-video.next {
-    transform: translateX(200%);
-  }
-
-  .testimonies-videos-carousel-container h2,
-  .testimonies-videos-carousel-container .alternative-title {
-    font-size: 2.5rem;
-    line-height: 1.1;
-  }
-
-  .prev-btn,
-  .next-btn {
-    justify-self: center;
+    max-width: calc((var(--arrow-size) * 2) + (var(--video-w) * 2.85) + (var(--gap) * 2));
+    min-height: calc(var(--video-h) + 24px);
+    margin: 24px auto 0;
+    padding: 12px 0;
+    overflow: visible;
   }
 }
 
 @media (max-width: 768px) {
+  .alternative-title {
+    font-size: clamp(2.2rem, 10vw, 2.75rem);
+  }
+
   .testimonies-videos-carousel {
-    width: 100%;
-    height: 55vh;
+    --video-w: min(220px, 62vw);
+    --arrow-size: 54px;
+    display: grid;
+    grid-template-columns: var(--arrow-size) var(--video-w) var(--arrow-size);
+    align-items: center;
+    width: min(100%, calc((var(--arrow-size) * 2) + var(--video-w) + (var(--gap) * 2)));
+    padding: 16px 0;
+  }
+  
+  .testimonies-video {
+    border: 8px solid #000;
   }
 }
