@@ -8,6 +8,7 @@
 
 .video-thumbnail {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -21,7 +22,9 @@
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   padding: 0;
 }
 
@@ -37,4 +40,5 @@
 .video-player {
   border: none;
   height: 100%;
+  width: 100%;
 }

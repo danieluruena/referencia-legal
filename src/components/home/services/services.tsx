@@ -1,4 +1,5 @@
 import './services.css'
+import './services.responsive.css'
 import '../../../common.css'
 import logoImage from '../../../assets/logo_referencia_legal.png'
 import divorciosIcon from '../../../assets/services/divorcios.webp'
@@ -68,8 +69,12 @@ export const Services = () => {
         <div className="services-logo">
           <img src={logoImage} alt="Referencia Legal" />
         </div>
-        <h2 className="alternative-title">DERECHO DE FAMILIA</h2>
-        <p className="services-description">Cada caso lo trabajamos con  experiencia, criterio y  atención personalizada.</p>
+        <div className="services-title">
+          <h2 className="alternative-title">DERECHO DE FAMILIA</h2>
+        </div>
+        <div className="services-description">
+          <p>Cada caso lo trabajamos con  experiencia, criterio y  atención personalizada.</p>
+        </div>
       </div>
       <div className="services-items">
         {servicesData.map((serviceData) => (
@@ -77,14 +82,14 @@ export const Services = () => {
             <img src={serviceData.icon} alt="" className="service-item-icon" />
             <h4 className="service-item-title">{serviceData.title}</h4>
             <p className="service-item-description">{serviceData.description}</p>
-            <a href={whatsappUrl} className="service-item-link">
+            <a href={whatsappUrl} target="_blank" className="service-item-link">
               <FontAwesomeIcon icon={faAngleRight} className="carousel-icon"/>
               Más información
             </a>
           </div>
         ))}
       </div>
-      <a href={whatsappUrl} className="main-button services-button">Agendar consulta</a>
+      <a href={whatsappUrl} target="_blank" className="main-button services-button">Agendar consulta</a>
     </div>
   )
 }

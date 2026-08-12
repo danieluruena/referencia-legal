@@ -33,8 +33,7 @@
   background: black;
   border-radius: 4px;
 
-  box-shadow:
-    0 65px 0 #000;
+  box-shadow: 0 65px 0 #000;
 }
 
 .video-wrapper::after {

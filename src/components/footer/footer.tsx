@@ -1,7 +1,13 @@
+import { useLocation } from 'react-router-dom'
 import { SocialLinks } from '../socialLinks/socialLinks'
 import './footer.css'
+import './footer.responsive.css'
 
 export const Footer = () => {
+  const location = useLocation()
+
+  const isContactPage = location.pathname === '/contacto' || location.pathname === '/contacto/'
+
   return (
     <footer className="footer">
       <div className="footer-container max-width">
@@ -14,10 +20,10 @@ export const Footer = () => {
           </div>
           <p>©2026 Todos los derechos reservados</p>
         </div>
-        <div className="footer-map-section">
+        <div className={`footer-map-section ${isContactPage ? 'hidden' : ''}`}>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4796555704092!2d-75.57509012323992!3d6.200275726831413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4683b191a30f69%3A0x7fa8cbb878de554c!2sReferencia%20Legal!5e0!3m2!1ses-419!2sco!4v1782349732362!5m2!1ses-419!2sco" width="600" height="450" loading="lazy"></iframe>
         </div>
-        <div className="footer-location-section">
+        <div className={`footer-location-section ${isContactPage ? 'hidden' : ''}`}>
           <div className="footer-social-links">
             <SocialLinks />
           </div>

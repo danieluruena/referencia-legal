@@ -1,12 +1,13 @@
 import type { FC } from 'react'
 import './aboutUs.css'
+import './aboutUs.responsive.css'
 import '../../common.css'
 import misionImg from '../../assets/aboutUs/mision.webp'
 import visionImg from '../../assets/aboutUs/vision.webp'
 
 export const AboutUs: FC = () => {
   return (
-    <main className='about-us'>
+    <div className='about-us'>
       <section className='about-section-mission'>
         <div className='about-section-content'>
           <div className='about-image'>
@@ -36,6 +37,6 @@ export const AboutUs: FC = () => {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

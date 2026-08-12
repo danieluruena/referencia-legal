@@ -1,4 +1,5 @@
 import './testimonies.css'
+import './testimonies.responsive.css'
 import '../../../common.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'

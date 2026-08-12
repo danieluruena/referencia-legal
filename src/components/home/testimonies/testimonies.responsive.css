@@ -1,0 +1,40 @@
+@media (min-width: 769px) and (max-width: 1520px) {
+
+  .testimonies-videos-carousel {
+    --video-w: clamp(240px, 27vw, 320px);
+    --video-h: calc(var(--video-w) * (16 / 9));
+    --arrow-size: clamp(64px, 8vw, 100px);
+    --gap: 20px;
+
+    display: grid;
+    grid-template-columns: var(--arrow-size) minmax(0, calc(var(--video-w) * 2.85)) var(--arrow-size);
+    align-items: center;
+    gap: var(--gap);
+    width: 100%;
+    max-width: calc((var(--arrow-size) * 2) + (var(--video-w) * 2.85) + (var(--gap) * 2));
+    min-height: calc(var(--video-h) + 24px);
+    margin: 24px auto 0;
+    padding: 12px 0;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .alternative-title {
+    font-size: clamp(2.2rem, 10vw, 2.75rem);
+  }
+
+  .testimonies-videos-carousel {
+    --video-w: min(220px, 62vw);
+    --arrow-size: 54px;
+    display: grid;
+    grid-template-columns: var(--arrow-size) var(--video-w) var(--arrow-size);
+    align-items: center;
+    width: min(100%, calc((var(--arrow-size) * 2) + var(--video-w) + (var(--gap) * 2)));
+    padding: 16px 0;
+  }
+  
+  .testimonies-video {
+    border: 8px solid #000;
+  }
+}

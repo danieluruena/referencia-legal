@@ -7,6 +7,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './socialLinks.css'
+import './socialLinks.responsive.css'
 
 export const SocialLinks = () => {
   const socialLinks = [

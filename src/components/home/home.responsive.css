@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+  .home-container {
+    width: 100%;
+  }
+
+  .home-container > hr {
+    margin-bottom: 24px;
+  }
+}
