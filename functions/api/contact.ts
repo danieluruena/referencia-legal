@@ -74,7 +74,7 @@ export const onRequestPost = async (context: EventContext<Env, string, unknown>)
     const { request, env } = context
   
     const resendApiKey = env.VITE_RESEND_API_KEY || ''
-    const turnstileSecret = env.VITE_TURNSTILE_SECRET_KEY || ''
+    // const turnstileSecret = env.VITE_TURNSTILE_SECRET_KEY || ''
     const contactFormData = sanitizeFormData(await request.json<ContactFormData>())
 
     // const isTokenValid = await validateTurnstileToken(contactFormData.turnstileToken, turnstileSecret)
