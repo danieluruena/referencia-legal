@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom'
 import { Header } from './components/header/header'
 import { Footer } from './components/footer/footer.tsx'
 import { WhatsAppButton } from './components/whatsappButton/whatsappButton.tsx'
+import { ScrollToTop } from './components/common/scrollToTop/scrollToTop.tsx'
+import { NotFound } from './components/common/notFound/notFound.tsx'
 
 const Home = lazy(() => import('./components/home/home.tsx').then(module => ({ default: module.Home })))
 const Team = lazy(() => import('./components/team/team.tsx').then(module => ({ default: module.Team })))
@@ -15,12 +17,14 @@ function App() {
     <>
       <Header />
       <div className="main-container">
+        <ScrollToTop />
         <Suspense fallback={<div className="loading-spinner">Cargando...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/equipo" element={<Team />} />
             <Route path="/nosotros" element={<AboutUs />} />
             <Route path="/contacto" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </div>

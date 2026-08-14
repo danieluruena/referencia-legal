@@ -27,10 +27,10 @@ export function Contact() {
   // const [turnstileToken, setToken] = useState('')
   
   useMetaTags({
-    title: 'Contacto | Solicita tu Obra Personalizada | Magda Castro',
-    description: 'Contáctame para solicitar obras personalizadas, servicios de performance, talleres o cualquier colaboración artística.',
-    image: 'https://magdacastro.com/assets/sobre-mi/me-1.webp',
-    url: 'https://magdacastro.com/contacto',
+    title: 'Contacto | Referencia Legal',
+    description: 'Contáctanos para solicitar una asesoría legal profesional en derecho de familia. Recibirás atención personalizada y humana.',
+    image: 'https://referencialegal.com/og-image.png',
+    url: 'https://referencialegal.com/contacto',
   })
 
   const extractFormValues = (form: HTMLFormElement): ContactFormData => {
