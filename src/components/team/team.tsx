@@ -8,9 +8,16 @@ import carolinaImg from '../../assets/team/Carolina.webp'
 import santiagoImg from '../../assets/team/Santiago.webp'
 import cristianImg from '../../assets/team/Cristian.webp'
 import check from '../../assets/team/check.webp'
+import { useMetaTags } from '../../hooks/useMetaTags'
 
 
 export const Team: FC = () => {
+  useMetaTags({
+    title: 'Nuestro Equipo | Referencia Legal',
+    description: 'Conoce a los abogados expertos de Referencia Legal en derecho de familia: directora jurídica, abogados especialistas y auxiliares. Profesionales comprometidos contigo.',
+    image: 'https://referencialegal.com/og-image.png',
+    url: 'https://referencialegal.com/equipo',
+  })
   return (
     <>
       <section id='team' className='team'>
