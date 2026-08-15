@@ -2,7 +2,7 @@ import './contact.css'
 import './contact.responsive.css'
 import '../../common.css'
 import { WhatsAppButton } from '../whatsappButton/whatsappButton'
-// import { Turnstile } from '@marsidev/react-turnstile'
+import { Turnstile } from '@marsidev/react-turnstile'
 import { useState } from 'react'
 import { useMetaTags } from '../../hooks/useMetaTags'
 import { SubmitModal } from './submitModal/submitModal'
@@ -24,7 +24,7 @@ type ContactFormData = {
 export function Contact() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
-  // const [turnstileToken, setToken] = useState('')
+  const [turnstileToken, setToken] = useState('')
   
   useMetaTags({
     title: 'Contacto | Referencia Legal',
@@ -71,16 +71,16 @@ export function Contact() {
     }
 
     try {
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify({ ...formValues, turnstileToken }),
-      // })
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...formValues, turnstileToken }),
+      })
 
-      // if (!response.ok) {
-      //   console.error(`Error al enviar el mensaje: ${response.status}`)
-      //   throw new Error('Error al enviar el mensaje')
-      // }
+      if (!response.ok) {
+        console.error(`Error al enviar el mensaje: ${response.status}`)
+        throw new Error('Error al enviar el mensaje')
+      }
       
 
       console.log('Mensaje enviado correctamente')
@@ -114,14 +114,10 @@ export function Contact() {
               <input type="tel" name="phone" id="phone" placeholder='Teléfono' onChange={() => handleFieldChange('phone')} />
               <textarea name="message" id="message" placeholder='Mensaje' rows={3} onChange={() => handleFieldChange('message')}></textarea>
               <button className="main-button form-button" type="submit">Enviar mensaje</button>
-              { 
-              /**
-               <Turnstile
+              <Turnstile
                 siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
                 onSuccess={(token) => { setToken(token) }}
               />
-              */
-              }
             </form>
           </div>
           <div className="map-container">
