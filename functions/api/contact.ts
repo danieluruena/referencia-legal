@@ -27,31 +27,31 @@ const ContactFormDataSchema = z.object({
   turnstileToken: z.string().min(1),
 })
 
-// interface TurnstileResponse {
-//   success: boolean;
-//   challenge_ts: string;
-//   hostname: string;
-//   'error-codes'?: string[];
-// }
+interface TurnstileResponse {
+  success: boolean;
+  challenge_ts: string;
+  hostname: string;
+  'error-codes'?: string[];
+}
 
-// const validateTurnstileToken = async (token: string, secretKey: string): Promise<boolean> => {
-//   try {
-//     const varificationResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//       body: new URLSearchParams({
-//         secret: secretKey,
-//         response: token,
-//       }),
-//     })
+const validateTurnstileToken = async (token: string, secretKey: string): Promise<boolean> => {
+  try {
+    const varificationResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        secret: secretKey,
+        response: token,
+      }),
+    })
 
-//     const data = await varificationResponse.json<TurnstileResponse>()
-//     return data.success
-//   } catch (error) {
-//     console.error('Error al validar el token de Turnstile:', error)
-//     return false
-//   }
-// }
+    const data = await varificationResponse.json<TurnstileResponse>()
+    return data.success
+  } catch (error) {
+    console.error('Error al validar el token de Turnstile:', error)
+    return false
+  }
+}
 
 const sanitizeFormData = (data: ContactFormData): ContactFormData => {
   const validationResult = ContactFormDataSchema.safeParse(data)
@@ -74,18 +74,18 @@ export const onRequestPost = async (context: EventContext<Env, string, unknown>)
     const { request, env } = context
   
     const resendApiKey = env.VITE_RESEND_API_KEY || ''
-    // const turnstileSecret = env.VITE_TURNSTILE_SECRET_KEY || ''
+    const turnstileSecret = env.VITE_TURNSTILE_SECRET_KEY || ''
     const contactFormData = sanitizeFormData(await request.json<ContactFormData>())
 
-    // const isTokenValid = await validateTurnstileToken(contactFormData.turnstileToken, turnstileSecret)
+    const isTokenValid = await validateTurnstileToken(contactFormData.turnstileToken, turnstileSecret)
 
-    // if (!isTokenValid) {
-    //   console.error('Token de Turnstile no válido')
-    //   return Response.json({
-    //     success: false,
-    //     error: 'Token de Turnstile no válido',
-    //   }, { status: 400 })
-    // }
+    if (!isTokenValid) {
+      console.error('Token de Turnstile no válido')
+      return Response.json({
+        success: false,
+        error: 'Token de Turnstile no válido',
+      }, { status: 400 })
+    }
   
     const response = await fetch('https://api.resend.com/emails', {
         method: 'POST',
