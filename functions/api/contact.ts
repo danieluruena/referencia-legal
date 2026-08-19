@@ -99,9 +99,13 @@ export const onRequestPost = async (context: EventContext<Env, string, unknown>)
       contactFormData = sanitizeFormData(requestData)
     } catch (error) {
       console.error('Datos de contacto no válidos:', error)
+      const validationDetails = error instanceof z.ZodError
+        ? error.issues
+        : undefined
       return Response.json({
         success: false,
-        error: 'Datos del formulario no válidos: ' + JSON.stringify(error),
+        error: 'Datos del formulario no válidos',
+        details: validationDetails,
       }, { status: 400 })
     }
 
