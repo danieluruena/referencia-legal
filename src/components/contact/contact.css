@@ -27,6 +27,11 @@
   gap: 20px;
 }
 
+.form-field {
+  display: grid;
+  gap: 6px;
+}
+
 .contact-form input,
 .contact-form textarea {
   border: 0;
@@ -34,6 +39,24 @@
   padding: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
   resize: vertical;
+}
+
+.contact-form input.field-error,
+.contact-form textarea.field-error,
+.turnstile-field.field-error {
+  border: 2px solid #c62828;
+}
+
+.field-error-message {
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+.turnstile-field {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  border: 2px solid transparent;
 }
 
 .contact-form input::placeholder,
