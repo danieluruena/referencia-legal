@@ -14,7 +14,7 @@ Built with **React 19 + TypeScript + Vite** and deployed on **Cloudflare Pages**
 | Styling | Per-component CSS (`.css` + `.responsive.css`) + `common.css` |
 | Backend | Cloudflare Pages Functions (`/functions`) |
 | Icons | Font Awesome |
-| CAPTCHA | Turnstile (pending activation) |
+| CAPTCHA | Cloudflare Turnstile |
 
 ## Prerequisites
 
@@ -92,14 +92,18 @@ The CI pipeline does not deploy automatically; the build runs on Cloudflare Page
 
 Everything in `public/` is copied to `dist/` and served from the root (`/robots.txt`, `/sitemap.xml`, `/favicon.webp`, `/og-image.png`).
 
-### Environment variables (Pages Functions)
+### Environment variables (Cloudflare Pages)
 
-`functions/api/contact.ts` uses these environment variables (configured under *Settings → Environment variables* of the Cloudflare project):
+The contact form is protected by Cloudflare Turnstile and sends messages through Resend. The following variables are configured under *Settings → Environment variables* in the Cloudflare Pages project:
 
-- `VITE_RESEND_API_KEY` — Resend API key for sending emails.
-- `VITE_TURNSTILE_SECRET_KEY` — Cloudflare Turnstile secret.
+- `VITE_ENV` — Current deployment environment (`prod`).
+- `VITE_TURNSTILE_SITE_KEY` — Turnstile public site key. It is embedded in the client bundle and must be available during the Pages build.
+- `VITE_RESEND_API_KEY` — Resend API key used by the Pages Function to send emails. Keep it encrypted and available to the Function at runtime.
+- `VITE_TURNSTILE_SECRET_KEY` — Cloudflare Turnstile secret used by the Pages Function to validate tokens. Keep it encrypted and available to the Function at runtime.
 
-> ⚠️ These are server-side secrets (only used in the Functions, not on the client). Never commit them.
+The three variables are currently configured in Cloudflare Pages. `VITE_TURNSTILE_SITE_KEY` is public; the Resend and Turnstile secret keys must remain encrypted and must never be committed to the repository.
+
+The backend endpoint is `POST /api/contact`, implemented in `functions/api/contact.ts`. It validates the form data, verifies the Turnstile token, and then sends the message through the Resend API. Configure the variables for every Cloudflare Pages environment that receives traffic, including Production and Preview when applicable.
 
 ## CI (GitHub Actions)
 
