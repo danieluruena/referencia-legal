@@ -4,8 +4,15 @@ import './aboutUs.responsive.css'
 import '../../common.css'
 import misionImg from '../../assets/aboutUs/mision.webp'
 import visionImg from '../../assets/aboutUs/vision.webp'
+import { useMetaTags } from '../../hooks/useMetaTags'
 
 export const AboutUs: FC = () => {
+  useMetaTags({
+    title: 'Quiénes Somos | Referencia Legal',
+    description: 'Conoce la misión y visión de Referencia Legal: una firma de abogados en Medellín especializada en derecho de familia, infancia y adolescencia, con un servicio humano y ético.',
+    image: 'https://referencialegal.com/og-image.png',
+    url: 'https://referencialegal.com/nosotros',
+  })
   return (
     <div className='about-us'>
       <section className='about-section-mission'>

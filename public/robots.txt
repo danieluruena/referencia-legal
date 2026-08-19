@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://referencialegal.com/sitemap.xml
