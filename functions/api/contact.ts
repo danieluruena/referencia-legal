@@ -101,7 +101,7 @@ export const onRequestPost = async (context: EventContext<Env, string, unknown>)
       console.error('Datos de contacto no válidos:', error)
       return Response.json({
         success: false,
-        error: 'Datos del formulario no válidos',
+        error: 'Datos del formulario no válidos: ' + JSON.stringify(error),
       }, { status: 400 })
     }
 

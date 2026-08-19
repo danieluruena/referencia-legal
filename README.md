@@ -105,6 +105,17 @@ The three variables are currently configured in Cloudflare Pages. `VITE_TURNSTIL
 
 The backend endpoint is `POST /api/contact`, implemented in `functions/api/contact.ts`. It validates the form data, verifies the Turnstile token, and then sends the message through the Resend API. Configure the variables for every Cloudflare Pages environment that receives traffic, including Production and Preview when applicable.
 
+#### Testing Cloudflare Pages previews
+
+Turnstile validates the hostname where its public site key is used. To test a Pages preview:
+
+1. In the Turnstile dashboard, add the preview hostname to the widget's allowed hostnames. Pages preview URLs commonly use `<branch>.<project>.pages.dev` or `<deployment>.<project>.pages.dev`; add the exact hostname shown in the browser. A wildcard such as `*.<project>.pages.dev` can be used when supported by the widget configuration.
+2. In Cloudflare Pages, configure `VITE_TURNSTILE_SITE_KEY`, `VITE_TURNSTILE_SECRET_KEY`, and `VITE_RESEND_API_KEY` for the **Preview** environment, not only **Production**.
+3. Prefer a separate Turnstile widget and key pair for Preview. If the Production pair is reused, its allowed hostnames must include the preview hostname.
+4. Trigger a new preview deployment after changing variables. The site key is embedded during the Vite build, while the secret is read by the Pages Function at runtime.
+
+The endpoint returns `400` when the Turnstile token is rejected. A `500` response usually indicates missing Preview runtime variables or an exception in the Pages Function, so check the deployment's Function logs as well as the browser console.
+
 ## CI (GitHub Actions)
 
 `.github/workflows/ps-checks.yml` runs on every pull request to `main` and `develop`:
