@@ -8,10 +8,11 @@ import { useMetaTags } from '../../hooks/useMetaTags'
 import { SubmitModal } from './submitModal/submitModal'
 
 type FieldErrors = {
-  name?: boolean
-  phone?: boolean
-  email?: boolean
-  message?: boolean
+  name?: string
+  phone?: string
+  email?: string
+  message?: string
+  turnstileToken?: string
 }
 
 type ContactFormData = {
@@ -50,10 +51,39 @@ export function Contact() {
   const validateForm = (formValues: ContactFormData): boolean => {
     const errors: FieldErrors = {}
 
-    if (!formValues.name) errors.name = true
-    if (!formValues.phone) errors.phone = true
-    if (!formValues.email) errors.email = true
-    if (!formValues.message) errors.message = true
+    if (!formValues.name) {
+      errors.name = 'Este campo es obligatorio'
+    } else if (formValues.name.length < 2) {
+      errors.name = 'La longitud de este campo debe ser mínimo 2 caracteres'
+    } else if (formValues.name.length > 100) {
+      errors.name = 'La longitud de este campo debe ser máximo 100 caracteres'
+    }
+
+    if (!formValues.phone) {
+      errors.phone = 'Este campo es obligatorio'
+    } else if (formValues.phone.length < 10) {
+      errors.phone = 'La longitud de este campo debe ser mínimo 10 caracteres'
+    } else if (formValues.phone.length > 15) {
+      errors.phone = 'La longitud de este campo debe ser máximo 15 caracteres'
+    }
+
+    if (!formValues.email) {
+      errors.email = 'Este campo es obligatorio'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
+      errors.email = 'Este campo debe tener el siguiente formato: correo@ejemplo.com'
+    }
+
+    if (!formValues.message) {
+      errors.message = 'Este campo es obligatorio'
+    } else if (formValues.message.length < 10) {
+      errors.message = 'La longitud de este campo debe ser mínimo 10 caracteres'
+    } else if (formValues.message.length > 5000) {
+      errors.message = 'La longitud de este campo debe ser máximo 5000 caracteres'
+    }
+
+    if (!turnstileToken) {
+      errors.turnstileToken = 'Debes completar la validación de CAPTCHA'
+    }
 
     setFieldErrors(errors)
     return Object.keys(errors).length === 0
@@ -66,11 +96,11 @@ export function Contact() {
 
     const formValues = extractFormValues(form)
     
-    if (!validateForm(formValues)) {
-      return
-    }
-
     try {
+      if (!validateForm(formValues)) {
+        return
+      }
+
       const response = await fetch('/api/contact', {
         method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -86,6 +116,7 @@ export function Contact() {
       console.log('Mensaje enviado correctamente')
       form.reset()
       setFieldErrors({})
+      setToken('')
       setIsModalOpen(true)
     } catch (error) {
       console.error(error)
@@ -109,15 +140,65 @@ export function Contact() {
         <div className="contact-sub-container">
           <div className="form-container">
             <form action="" className="contact-form" onSubmit={handleSubmit}>
-              <input type="text" name="name" id="name" placeholder='Nombre completo' onChange={() => handleFieldChange('name')}/>
-              <input type="email" name="email" id="email" placeholder='Correo electrónico' onChange={() => handleFieldChange('email')} />
-              <input type="tel" name="phone" id="phone" placeholder='Teléfono' onChange={() => handleFieldChange('phone')} />
-              <textarea name="message" id="message" placeholder='Mensaje' rows={3} onChange={() => handleFieldChange('message')}></textarea>
+              <div className="form-field">
+                <input 
+                  className={fieldErrors.name ? 'field-error' : ''} 
+                  type="text" 
+                  name="name" 
+                  id="name" 
+                  placeholder='Nombre completo' 
+                  aria-invalid={Boolean(fieldErrors.name)} 
+                  onChange={() => handleFieldChange('name')}
+                />
+                {fieldErrors.name && <span className="field-error-message">{fieldErrors.name}</span>}
+              </div>
+              <div className="form-field">
+                <input 
+                  className={fieldErrors.email ? 'field-error' : ''} 
+                  type="email" 
+                  name="email" 
+                  id="email" 
+                  placeholder='Correo electrónico' 
+                  aria-invalid={Boolean(fieldErrors.email)} 
+                  onChange={() => handleFieldChange('email')} 
+                />
+                {fieldErrors.email && <span className="field-error-message">{fieldErrors.email}</span>}
+              </div>
+              <div className="form-field">
+                <input 
+                  className={fieldErrors.phone ? 'field-error' : ''} 
+                  type="tel" 
+                  name="phone" 
+                  id="phone" 
+                  placeholder='Teléfono' 
+                  aria-invalid={Boolean(fieldErrors.phone)} 
+                  onChange={() => handleFieldChange('phone')}
+                />
+                {fieldErrors.phone && <span className="field-error-message">{fieldErrors.phone}</span>}
+              </div>
+              <div className="form-field">
+                <textarea 
+                  className={fieldErrors.message ? 'field-error' : ''} 
+                  name="message" 
+                  id="message" 
+                  placeholder='Mensaje' 
+                  rows={3} 
+                  aria-invalid={Boolean(fieldErrors.message)} 
+                  onChange={() => handleFieldChange('message')}>
+                </textarea>
+                {fieldErrors.message && <span className="field-error-message">{fieldErrors.message}</span>}
+              </div>
               <button className="main-button form-button" type="submit">Enviar mensaje</button>
-              <Turnstile
-                siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-                onSuccess={(token) => { setToken(token) }}
-              />
+              <div className={fieldErrors.turnstileToken ? 'turnstile-field field-error' : 'turnstile-field'}>
+                <Turnstile
+                  siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                  onSuccess={(token) => {
+                    setToken(token)
+                    handleFieldChange('turnstileToken')
+                  }}
+                />
+                {fieldErrors.turnstileToken && <span className="field-error-message">{fieldErrors.turnstileToken}</span>}
+              </div>
             </form>
           </div>
           <div className="map-container">
