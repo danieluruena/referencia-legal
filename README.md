@@ -28,11 +28,24 @@ npm ci          # installs exact dependencies from the lockfile
 npm run dev     # dev server at http://localhost:3000
 ```
 
+To run the complete site and the Cloudflare Pages Function locally, including `POST /api/contact`:
+
+```bash
+cp .env.example .env
+# Edit .env and set a valid Resend API key if you want to send a real email.
+npm run dev:pages
+```
+
+Open `http://localhost:8788/contacto`. `npm run dev:pages` builds the client from `.env` and then starts Wrangler with the Pages Function in `functions/`, also loading the same file through `--env-file`. The local Turnstile test keys in `.env.example` are intended for local testing; use a real `VITE_RESEND_API_KEY` to complete delivery through Resend. The local `.env` file is ignored and must not be committed.
+
+If you want Vite HMR while using the local backend, leave `npm run dev:pages` running in one terminal and start `npm run dev` in another. Open `http://localhost:3000/contacto`; Vite will proxy `/api/contact` to Wrangler at `http://localhost:8788`.
+
 ## Available scripts
 
 | Command | Description |
 | --- | --- |
 | `npm run dev` | Dev server with HMR (port 3000) |
+| `npm run dev:pages` | Production build served by Wrangler with Pages Functions (port 8788) |
 | `npm run build` | Typecheck (`tsc -b`) + production build to `dist/` |
 | `npm run lint` | ESLint across the whole project |
 | `npm run preview` | Preview the production build locally |
