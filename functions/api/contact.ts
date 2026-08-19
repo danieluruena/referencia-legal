@@ -122,8 +122,9 @@ export const onRequestPost = async (context: EventContext<Env, string, unknown>)
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Contacto <onboarding@resend.dev>',
-          to: 'dennis14756@gmail.com',
+          from: 'Contacto <contacto@referencialegal.com>',
+          to: 'contacto@referencialegal.com',
+          reply_to: contactFormData.email,
           subject: 'Nuevo mensaje del formulario',
           html: `
             <h2>Nuevo contacto</h2>
