@@ -29,8 +29,8 @@
 
 .hero-image-container img {
   display: block;
-  width: 115%;
-  transform: translateX(-15%);
+  width: 70%;
+  transform: translateX(15%);
   height: auto;
   z-index: 3;
   mask-image: linear-gradient(

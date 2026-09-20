@@ -3,10 +3,10 @@ import './team.css'
 import './team.responsive.css'
 import '../../common.css'
 import '../../common.responsive.css'
-import melisaImg from '../../assets/team/Melisa.webp'
-import carolinaImg from '../../assets/team/Carolina.webp'
-import santiagoImg from '../../assets/team/Santiago.webp'
-import cristianImg from '../../assets/team/Cristian.webp'
+import melisaImg from '../../assets/team/melisa.webp'
+import carolinaImg from '../../assets/team/carolina.webp'
+import yisethImg from '../../assets/team/yiseth.webp'
+import cristianImg from '../../assets/team/cristian.webp'
 import check from '../../assets/team/check.webp'
 import { useMetaTags } from '../../hooks/useMetaTags'
 
@@ -40,9 +40,9 @@ export const Team: FC = () => {
               <p>Abogada Especialista</p>
             </div>
             <div className='team-member'>
-              <img src={santiagoImg} alt="SANTIAGO CARDONA" />
-              <h3>SANTIAGO CARDONA</h3>
-              <p>Auxiliar Jurídico</p>
+              <img src={yisethImg} alt="Yiseth Castro" />
+              <h3>Yiseth Castro</h3>
+              <p>Auxiliar Jurídica</p>
             </div>
           </div>
         </div>
