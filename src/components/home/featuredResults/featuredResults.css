@@ -36,3 +36,7 @@
   font-weight: 300;
   color: black;
 }
+
+.featured-results-arrow {
+  display: none;
+}

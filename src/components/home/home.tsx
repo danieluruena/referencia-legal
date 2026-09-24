@@ -10,6 +10,7 @@ import { useScrollAnimation } from '../../hooks/useScrollanimation'
 import { useHashScroll } from '../../hooks/useHashScroll'
 import { useMetaTags } from '../../hooks/useMetaTags'
 import { Testimonies } from './testimonies/testimonies'
+import { Review } from './review/review'
 
 export function Home() {
   useScrollAnimation()
@@ -31,6 +32,7 @@ export function Home() {
         <hr />
         <Services />
         <Testimonies />
+        <Review />
       </div>
     </div>
   )
