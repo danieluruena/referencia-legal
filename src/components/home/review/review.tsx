@@ -73,11 +73,16 @@ const collapsedTextLimit = 220
 
 const swipeThreshold = 50
 
+// Avance automático del carrusel, solo en escritorio
+const autoplayDelay = 3000
+
+const desktopVisibleCount = 3
+
 // Tarjetas visibles según el ancho de pantalla (mismos cortes que review.responsive.css)
 const getVisibleCount = () => {
   if (window.matchMedia('(max-width: 768px)').matches) return 1
   if (window.matchMedia('(max-width: 1200px)').matches) return 2
-  return 3
+  return desktopVisibleCount
 }
 
 const useVisibleCount = () => {
@@ -144,6 +149,19 @@ export const Review = () => {
   const [selectedIndex, setCurrentIndex] = useState(0)
   const currentIndex = Math.min(selectedIndex, positionsCount - 1)
   const touchStartX = useRef<number | null>(null)
+
+  // Se reinicia con cada cambio de reseña: un clic en flechas o puntos vuelve a contar los 15 s
+  useEffect(() => {
+    if (visibleCount !== desktopVisibleCount) return
+    const timer = window.setTimeout(() => {
+      setCurrentIndex((currentIndex + 1) % positionsCount)
+    }, autoplayDelay)
+    return () => window.clearTimeout(timer)
+  }, [
+    currentIndex,
+    positionsCount,
+    visibleCount,
+  ])
 
   const nextReview = () => {
     setCurrentIndex((currentIndex + 1) % positionsCount)
