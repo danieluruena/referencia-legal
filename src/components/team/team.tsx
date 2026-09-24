@@ -40,8 +40,8 @@ export const Team: FC = () => {
               <p>Abogada Especialista</p>
             </div>
             <div className='team-member'>
-              <img src={yisethImg} alt="Yiseth Castro" />
-              <h3>Yiseth Castro</h3>
+              <img src={yisethImg} alt="NASLY CASTRO" />
+              <h3>NASLY CASTRO</h3>
               <p>Auxiliar Jurídica</p>
             </div>
           </div>

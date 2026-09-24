@@ -7,7 +7,7 @@
   --video-w: 320px;
   --video-h: calc(var(--video-w) * (16 / 9));
   --arrow-size: 100px;
-  --gap: -10px;
+  --gap: 0px;
   display: grid;
   grid-template-columns: var(--arrow-size) 2fr var(--arrow-size);
   align-items: center;
@@ -63,6 +63,7 @@
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.7);
   z-index: 0;
+  pointer-events: none;
 }
 
 .carousel-btn {
