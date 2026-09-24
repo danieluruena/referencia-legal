@@ -19,14 +19,46 @@
 }
 
 @media (max-width: 768px) {
+  .featured-results-carousel {
+    --arrow-size: 54px;
+    display: grid;
+    grid-template-columns: var(--arrow-size) minmax(0, 1fr) var(--arrow-size);
+    align-items: center;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .featured-results-arrow {
+    display: block;
+    justify-self: center;
+    background: none;
+    border: 0;
+    font-size: 48pt;
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+
   .featured-results-container {
-    grid-template-columns: 1fr;
-    padding: 32px 16px;
-    gap: 20px;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    padding: 32px 0;
+    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .featured-results-container::-webkit-scrollbar {
+    display: none;
   }
 
   .results-card {
+    flex: 0 0 100%;
+    height: 250px;
     padding: 28px 20px;
+    scroll-snap-align: center;
   }
 
   .results-card-number {
