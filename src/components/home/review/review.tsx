@@ -202,7 +202,7 @@ export const Review = () => {
               <div>
                 <Stars rating={googleRating} />
                 {googleReviewsCount !== null && (
-                  <span className="review-summary-count">Basado en {googleReviewsCount} reseñas</span>
+                  <span className="review-summary-count"></span>
                 )}
               </div>
             </div>
