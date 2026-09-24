@@ -24,13 +24,19 @@
     font-size: clamp(2.2rem, 10vw, 2.75rem);
   }
 
+  .testimonies-videos-carousel-container {
+    padding: 40px 16px 8px;
+  }
+
   .testimonies-videos-carousel {
-    --video-w: min(220px, 62vw);
     --arrow-size: 54px;
+    --video-w: min(220px, calc(100vw - 32px - (var(--arrow-size) * 2)));
     display: grid;
     grid-template-columns: var(--arrow-size) var(--video-w) var(--arrow-size);
+    justify-content: center;
     align-items: center;
-    width: min(100%, calc((var(--arrow-size) * 2) + var(--video-w) + (var(--gap) * 2)));
+    width: 100%;
+    max-width: 100%;
     padding: 16px 0;
   }
   
